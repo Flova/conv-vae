@@ -55,7 +55,7 @@ def main():
     ])
 
     train_data = datasets.ImageFolder(data_dir, transform=train_transforms)
-    trainloader = torch.utils.data.DataLoader(train_data, batch_size=args.batch_size, shuffle=True, pin_memory=True)
+    trainloader = torch.utils.data.DataLoader(train_data, num_workers=8, batch_size=args.batch_size, shuffle=True, pin_memory=True)
 
     images, labels = next(iter(trainloader))
 
